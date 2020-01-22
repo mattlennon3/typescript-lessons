@@ -1,36 +1,80 @@
-import {Basket, Product, Discount, xForYFactory} from './discount';
-
-const basket = new Basket();
-
-const products: Product[] = [{
-  name: 'Bag',
-  price: 10
-}, {
-  name: 'Gloves',
-  price: 5
-}, {
-  name: 'Ring',
-  price: 1
-}];
+import {Basket, Product, Discount, xForYFactory, ProductTypes} from './discount';
 
 describe('Basket total', () => {
-
   test('Basket subtotal is correct', () => {
-    basket.products = products;
-    expect(basket.subtotal_sum).toBe(16);
-  });
-
-  test('Basket total will apply discounts', () => {
-    basket.products = products;
+    const basket = new Basket();
+    basket.products = [{
+      name: 'Bag',
+      price: 10,
+      type: ProductTypes.Accessories
+    }, {
+      name: 'Gloves',
+      price: 5,
+      type: ProductTypes.Clothes
+    }];
+    expect(basket.subtotal_sum).toBe(15);
   });
 
   describe('x for y ', () => {
-    test('3 for 2', () => {
-      basket.products = products;
+    test('3 for 2 with 3 products', () => {
+      const basket = new Basket();
+      basket.products = [{
+        name: 'Bag',
+        price: 10,
+        type: ProductTypes.Accessories
+      }, {
+        name: 'Gloves',
+        price: 5,
+        type: ProductTypes.Clothes
+      }, {
+        name: 'Ring',
+        price: 1,
+        type: ProductTypes.Accessories
+      }];
       const threeForTwo = xForYFactory(3, 2);
       basket.applyDiscount(threeForTwo);
-      expect(basket.total).toBe(15)
-    })
+      expect(basket.total).toBe(15);
+    });
+    test('3 for 2 with more products', () => {
+      const basket = new Basket();
+      basket.products = [{
+        name: 'Bag',
+        price: 10,
+        type: ProductTypes.Accessories
+      }, {
+        name: 'Gloves',
+        price: 5,
+        type: ProductTypes.Clothes
+      }, {
+        name: 'Ring',
+        price: 1,
+        type: ProductTypes.Accessories
+      }, {
+        name: 'Scarf',
+        price: 3,
+        type: ProductTypes.Clothes
+      }];
+      const threeForTwo = xForYFactory(3, 2);
+      basket.applyDiscount(threeForTwo);
+      expect(basket.total).toBe(18);
+    });
+    test('3 for 2 with less products', () => {
+      const basket = new Basket();
+      basket.products = [{
+        name: 'Bag',
+        price: 10,
+        type: ProductTypes.Accessories
+      }, {
+        name: 'Gloves',
+        price: 5,
+        type: ProductTypes.Clothes
+      }];
+      const threeForTwo = xForYFactory(3, 2);
+      basket.applyDiscount(threeForTwo);
+      expect(basket.total).toBe(15);
+    });
+    
+    
   });
   // test('')
 

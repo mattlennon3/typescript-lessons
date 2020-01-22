@@ -2,7 +2,7 @@
 
 ## Objectives
 - Interface nesting/extends
-- Types vs Interfaces
+- Interfaces vs Types
 - Optional and default parameters
 - Enums
 
