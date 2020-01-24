@@ -44,7 +44,10 @@ export class Basket {
   }
 
   get total(): number {
-    return this._discount(this._products);
+    if(this._discount) {
+      return this._discount(this._products);
+    }
+    return this.subtotal_sum;
   }
 
   /**
