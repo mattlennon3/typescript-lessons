@@ -32,7 +32,12 @@ export const xForYFactory = (xProducts: number, yPriceOf: number) => {
 
 export class Basket {
   private _products: Product[];
-  private _discount: Discount;
+  private _discount: Discount | null;
+
+  constructor(){
+    this._products = [];
+    this._discount = null;
+  }
 
   public applyDiscount(discount: Discount) {
     this._discount = discount;
