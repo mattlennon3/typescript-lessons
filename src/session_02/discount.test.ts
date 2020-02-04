@@ -32,7 +32,7 @@ describe('Basket total', () => {
         type: ProductTypes.Accessories
       }];
       const threeForTwo = xForYFactory(3, 2);
-      basket.applyDiscount(threeForTwo);
+      basket.discount = threeForTwo;
       expect(basket.total).toBe(15);
     });
     test('3 for 2 with more products', () => {
@@ -55,10 +55,10 @@ describe('Basket total', () => {
         type: ProductTypes.Clothes
       }];
       const threeForTwo = xForYFactory(3, 2);
-      basket.applyDiscount(threeForTwo);
+      basket.discount = threeForTwo;
       expect(basket.total).toBe(18);
     });
-    test('3 for 2 with less products', () => {
+    test('3 for 2 with 2 products will apply no discount', () => {
       const basket = new Basket();
       basket.products = [{
         name: 'Bag',
@@ -70,7 +70,7 @@ describe('Basket total', () => {
         type: ProductTypes.Clothes
       }];
       const threeForTwo = xForYFactory(3, 2);
-      basket.applyDiscount(threeForTwo);
+      basket.discount = threeForTwo;
       expect(basket.total).toBe(15);
     });
     

@@ -22,8 +22,9 @@ export const xForYFactory = (xProducts: number, yPriceOf: number) => {
       .reduce((prev, current) => current + prev);
     const cheapestProductPrice = Math.min(...products.map((product) => product.price));
     let total = subtotal - cheapestProductPrice;
-    if(products.length > xProducts){
-      
+    // TODO: Reject when less products than discount minimum
+    if(products.length <= xProducts){
+      console.log(products.length, xProducts)
     }
     return total;
   }
@@ -37,10 +38,6 @@ export class Basket {
   constructor(){
     this._products = [];
     this._discount = null;
-  }
-
-  public applyDiscount(discount: Discount) {
-    this._discount = discount;
   }
 
   get total(): number {
@@ -60,6 +57,10 @@ export class Basket {
 
   set products(products: Product[]) {
     this._products = products;
+  }
+
+  set discount(discount: Discount) {
+    this._discount = discount;
   }
 
 }
