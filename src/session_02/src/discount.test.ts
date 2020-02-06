@@ -1,4 +1,6 @@
-import {Basket, Product, Discount, xForYFactory, ProductTypes} from './discount';
+import { xForYFactory, } from './discount';
+import { Basket } from './basket';
+import { Product, ProductTypes, Discount } from './types';
 
 describe('Basket total', () => {
   test('Basket subtotal is correct', () => {
@@ -73,8 +75,8 @@ describe('Basket total', () => {
       basket.discount = threeForTwo;
       expect(basket.total).toBe(15);
     });
-    
-    
+
+
   });
   // test('')
 
