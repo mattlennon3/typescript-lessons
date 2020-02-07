@@ -24,7 +24,7 @@ const firstName: string = 'Winner winner';
 An interface contains the name of all an objects properties along with their types. It also includes the signature for functions along with the arguments and return type.
 </p>
 </details>
-<details><summary>Can you import a JavaScript file?</summary>
+<details><summary>Can you import a JavaScript file in a TypeScript project?</summary>
 <p>
 
 ### Of course! :unamused: 

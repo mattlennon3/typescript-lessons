@@ -1,6 +1,10 @@
 
 import { Product, Discount } from './types';
 
+export const xForPriceFactory = (xProducts: number, price: number) => {
+  
+}
+
 export const xForYFactory = (xProducts: number, yPriceOf: number) => {
   const discount: Discount = (products: Product[]) => {
     const subtotal = products.map((product) => product.price)

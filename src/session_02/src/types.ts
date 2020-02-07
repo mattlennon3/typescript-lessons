@@ -1,8 +1,8 @@
 export interface Product {
+  id: number;
   name: string;
   price: number;
   type: ProductTypes;
-  id: number;
 }
 
 export enum ProductTypes {
@@ -21,5 +21,7 @@ export interface PayResponse {
   messages: string[];
 }
 
-
+/**
+ * A function which can apply a discount to a collection of products
+ */
 export type Discount = (products: Product[]) => number;
