@@ -20,7 +20,7 @@ todaysDiscounts.set('3 for 2', xForYFactory(3, 2));
 
 app.get('/discounts', (request, response) => {
     response.send(todaysDiscounts.keys());
-})
+});
 
 app.get('/payWithDiscount(or just pay)', (request, response) => {
     

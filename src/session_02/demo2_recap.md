@@ -13,14 +13,14 @@
 
 ### You got it :grin: 
 ```TypeScript
-const firstName: string = 'Matt';
+const firstName: string = 'Winner winner';
 ```
 </p>
 </details>
 <details><summary>What is an interface?</summary>
 <p>
 
-### Mostly right! :open_mouth: 
+### Yep! :open_mouth: 
 An interface contains the name of all an objects properties along with their types. It also includes the signature for functions along with the arguments and return type.
 </p>
 </details>
@@ -34,4 +34,12 @@ This is no problem, variables will have the `any` type. You can write a definiti
 
 </br></br>
 
-### [TypeScript Session 2 -> ](demo2.md)
+<!-- ### [TypeScript Session 2 -> ](demo2.md) -->
+
+
+# Session 2 Objectives
+- Interface nesting/extends
+- Interfaces vs Types
+- Reusing interfaces
+- Optional and default parameters
+- Enums

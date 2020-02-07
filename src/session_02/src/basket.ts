@@ -1,6 +1,5 @@
-
-
 import { Product, ProductTypes, Discount } from './types';
+
 export class Basket {
     private _products: Product[];
     private _discount: Discount | null;
