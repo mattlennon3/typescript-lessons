@@ -27,6 +27,10 @@ export class Basket {
     set products(products: Product[]) {
       this._products = products;
     }
+
+    get products() {
+      return this._products;
+    }
   
     set discount(discount: Discount) {
       this._discount = discount;

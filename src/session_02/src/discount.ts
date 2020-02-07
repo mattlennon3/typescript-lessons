@@ -13,7 +13,7 @@ export const xForYFactory = (xProducts: number, yPriceOf: number) => {
     const cheapestProductPrice = Math.min(...products.map((product) => product.price));
     let total = subtotal - cheapestProductPrice;
 
-    if(products.length <= xProducts){
+    if(products.length < xProducts){
       return subtotal;
     }
     return total;

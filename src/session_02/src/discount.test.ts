@@ -84,6 +84,7 @@ describe('Basket total', () => {
       }];
       const threeForTwo = xForYFactory(3, 2);
       basket.discount = threeForTwo;
+      expect(basket.products.length).toBe(2)
       expect(basket.total).toBe(15);
     });
   });
