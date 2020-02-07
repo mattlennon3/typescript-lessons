@@ -43,3 +43,7 @@ This is no problem, variables will have the `any` type. You can write a definiti
 - Reusing interfaces
 - Optional and default parameters
 - Enums
+
+## Tasks
+- Implement a new discount.
+- Make it a discount of the day and check it can be applied.
