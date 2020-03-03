@@ -1,4 +1,4 @@
-import { xForYFactory, } from './discount';
+import { xForYFactory, spend100get20off } from './discount';
 import { Basket } from './basket';
 import { ProductTypes } from './types';
 
@@ -86,6 +86,35 @@ describe('Basket total', () => {
       basket.discount = threeForTwo;
       expect(basket.products.length).toBe(2)
       expect(basket.total).toBe(15);
+    });
+  });
+  describe('Spend 100 get 20 off', () => {
+    test('When spending £100, get £20 off', () => {
+      const basket = new Basket();
+      basket.products = [{
+        id: 1,
+        name: 'Bag',
+        price: 100,
+        type: ProductTypes.Accessories
+      }, {
+        id: 2,
+        name: 'Gloves',
+        price: 5,
+        type: ProductTypes.Clothes
+      }];
+      basket.discount = spend100get20off;
+      expect(basket.total).toBe(85);
+    });
+    test('When spending £100, get £20 off', () => {
+      const basket = new Basket();
+      basket.products = [{
+        id: 1,
+        name: 'Bag',
+        price: 100,
+        type: ProductTypes.Accessories
+      }];
+      basket.discount = spend100get20off;
+      expect(basket.total).toBe(80);
     });
   });
 });
